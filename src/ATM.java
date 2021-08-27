@@ -1,15 +1,15 @@
 import java.util.HashMap;
 
 public class ATM {
-	private HashMap<String,Integer> BankIDs;
+	private HashMap<String,Float> BankIDs;
 	public ATM()
 	{
 		BankIDs = new HashMap();
 	}
-	public void deposit(String ID,Integer amount) {
+	public void deposit(String ID,Float amount) {
 		if(BankIDs.containsKey(ID))
 		{
-			int storage = BankIDs.remove(ID);
+			Float storage = BankIDs.remove(ID);
 			BankIDs.put(ID,amount+storage);
 		}
 		else {
