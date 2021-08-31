@@ -22,15 +22,14 @@ public class ATM {
 		{
 			if (BankIDs.get(ID)<amount)
 			{
-				System.out.println ("LMAO broke");
-				return;
+				throw new IrregularBalanceException("LMAO broke");
 			}
 			Float storage = BankIDs.remove(ID);
 			BankIDs.put(ID,amount-storage);
 		}
 		else
 		{
-			System.out.println ("Account does not exist")
+			throw new AccountNotFoundException("Account does not exist");
 		}
 	}
 	public String checkBalance (String ID)
@@ -39,7 +38,6 @@ public class ATM {
 		{
 			return (String)BankIDs.get(ID);
 		}
-		System.out.println("Account does not exist");
-		return "";
+		throw new AccountNotFoundException("Account does not exist");
 	}
 }
