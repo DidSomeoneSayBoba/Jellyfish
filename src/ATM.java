@@ -29,7 +29,7 @@ public class ATM {
 		}
 		else
 		{
-			throw new AccountNotFoundException("Account does not exist");
+			throw new AccountNotFoundException("Account does not exist. Guess again.");
 		}
 	}
 	public String checkBalance (String ID)
@@ -38,6 +38,6 @@ public class ATM {
 		{
 			return (String)BankIDs.get(ID);
 		}
-		throw new AccountNotFoundException("Account does not exist");
+		throw new AccountNotFoundException("Account does not exist. Guess again.");
 	}
 }
