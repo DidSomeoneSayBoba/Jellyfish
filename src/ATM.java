@@ -18,7 +18,21 @@ public class ATM {
 	}
 	public void withdraw(String ID,Float amount)
 	{
-		
+		if(BankIDs.containsKey(ID))
+		{
+			if (BankIDs.get(ID)<amount)
+			{
+				System.out.println ("LMAO broke");
+				return;
+			}
+			Float storage = BankIDs.remove(ID);
+			BankIDs.put(ID,amount-storage);
+		}
+		else
+		{
+			System.out.println ("Account does not exist")
+		}
 	}
-	
+
+	}
 }
