@@ -16,5 +16,9 @@ public class ATM {
 		BankIDs.put(ID, amount);
 		}
 	}
+	public void withdraw(String ID,Float amount)
+	{
+		
+	}
 	
 }
