@@ -33,6 +33,13 @@ public class ATM {
 			System.out.println ("Account does not exist")
 		}
 	}
-
+	public String checkBalance (String ID)
+	{
+		if(BankIDs.containsKey(ID))
+		{
+			return (String)BankIDs.get(ID);
+		}
+		System.out.println("Account does not exist");
+		return "";
 	}
 }
