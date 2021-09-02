@@ -16,5 +16,28 @@ public class ATM {
 		BankIDs.put(ID, amount);
 		}
 	}
-	
+	public void withdraw(String ID,Float amount)
+	{
+		if(BankIDs.containsKey(ID))
+		{
+			if (BankIDs.get(ID)<amount)
+			{
+				throw new IrregularBalanceException("LMAO broke");
+			}
+			Float storage = BankIDs.remove(ID);
+			BankIDs.put(ID,amount-storage);
+		}
+		else
+		{
+			throw new AccountNotFoundException("Account does not exist. Guess again.");
+		}
+	}
+	public String checkBalance (String ID)
+	{
+		if(BankIDs.containsKey(ID))
+		{
+			return (String)BankIDs.get(ID);
+		}
+		throw new AccountNotFoundException("Account does not exist. Guess again.");
+	}
 }
